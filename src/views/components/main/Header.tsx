@@ -1,22 +1,17 @@
 import { Box, Stack, Heading, Flex, Button } from '@chakra-ui/react';
-import { Auth, Amplify } from 'aws-amplify';
+//import { Auth, Amplify } from 'aws-amplify';
 import '@aws-amplify/ui-react/styles.css';
-import awsExports from '../../../aws-exports';
-Amplify.configure(awsExports);
+// import awsExports from '../../../aws-exports';
+// Amplify.configure(awsExports);
 
 type Props = { isLogin: boolean };
 
 const Header: React.FC<Props> = (props) => {
   const { isLogin } = props;
-  //const { user, signOut } = useAuthenticator((context) => [context.user]);
-
-  //const { isOpen, onOpen, onClose } = useDisclosure();
-  //const handleToggle = () => (isOpen ? onClose() : onOpen());
 
   // サインアウトボタンを設置
   const signOut = () => {
-    Auth.signOut().catch((err: any) => console.log(err));
-    //setCurrentUser(undefined);
+    // Auth.signOut().catch((err: any) => console.log(err));
   };
 
   return (

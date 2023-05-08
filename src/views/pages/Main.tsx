@@ -2,7 +2,7 @@ import { VStack } from '@chakra-ui/layout';
 import AddTodo from '../components/main/AddTodo';
 import Header from '../components/main/Header';
 import TodoList from '../components/main/TodoList';
-import { Auth } from 'aws-amplify';
+//import { Auth } from 'aws-amplify';
 //import '@aws-amplify/ui-react/styles.css';
 //import awsExports from './../../aws-exports';
 import { useState } from 'react';
