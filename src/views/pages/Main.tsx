@@ -30,5 +30,4 @@ const Main: React.FC = () => {
     </VStack>
   );
 };
-
 export default Main;
