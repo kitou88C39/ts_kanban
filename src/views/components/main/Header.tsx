@@ -1,6 +1,6 @@
 import { Box, Stack, Heading, Flex, Button } from '@chakra-ui/react';
 //import { Auth, Amplify } from 'aws-amplify';
-import '@aws-amplify/ui-react/styles.css';
+//import '@aws-amplify/ui-react/styles.css';
 // import awsExports from '../../../aws-exports';
 // Amplify.configure(awsExports);
 
