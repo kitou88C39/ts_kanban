@@ -24,7 +24,8 @@ import { useAppDispatch } from '../../../stores/hooks';
 import { editTodoRealTime } from '../../../stores/slices/todoSlice';
 import ReactMarkdown from 'react-markdown';
 import { useState } from 'react';
-import { updateTodoApi, deleteTodoApi } from '../../../stores/slices/todoAPI';
+//import { updateTodoApi, deleteTodoApi } from '../../../stores/slices/todoAPI';
+import { updateTodoApi } from '../../../stores/slices/todoAPI';
 //import { useAuthenticator } from '@aws-amplify/ui-react';
 type Props = {
   id: string;
@@ -55,14 +56,14 @@ const TodoItem: React.FC<Props> = ({ id, title, content, isDone }) => {
     }
     setIsEdit(!isEdit);
   };
-  const handleDelete = async () => {
-    try {
-      const data = { id };
-      await deleteTodoApi(data);
-    } catch (error) {
-      console.error(error);
-    }
-  };
+  // const handleDelete = async () => {
+  //   try {
+  //     const data = { id };
+  //     await deleteTodoApi(data);
+  //   } catch (error) {
+  //     console.error(error);
+  //   }
+  // };
 
   //Read配列とUser配列を結合して、Todo配列のプロパティに誰が既読したかを入れた後、その結合させた配列をforを使って既読した人を表示
   interface Todo {
@@ -172,7 +173,7 @@ const TodoItem: React.FC<Props> = ({ id, title, content, isDone }) => {
                 cursor='pointer'
                 h={6}
                 w={6}
-                onClick={handleDelete}
+                //onClick={handleDelete}
               />
               <Button
                 mt={1}
