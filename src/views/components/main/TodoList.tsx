@@ -10,8 +10,8 @@ import {
   updateTodoRealTime,
   deleteTodoRealTime,
 } from '../../../stores/slices/todoSlice';
-import { DataStore } from 'aws-amplify';
-import { Todo } from '../../../models';
+//import { DataStore } from 'aws-amplify';
+//import { Todo } from '../../../models';
 
 const TodoList: React.FC = () => {
   const TodoList = useAppSelector(selectTodoList);
@@ -27,21 +27,21 @@ const TodoList: React.FC = () => {
 
   useEffect(() => {
     //todoテーブルの変更をリアルタイムに検知する
-    const subscription = DataStore.observe(Todo).subscribe((msg) => {
-      switch (msg.opType) {
-        case 'INSERT':
-          dispatch(fetchTodoRealTime(msg.element));
-          break;
-        case 'UPDATE':
-          dispatch(updateTodoRealTime(msg.element));
-          break;
-        case 'DELETE':
-          dispatch(deleteTodoRealTime(msg.element));
-          break;
-      }
-    });
+    // const subscription = DataStore.observe(Todo).subscribe((msg) => {
+    //   switch (msg.opType) {
+    //     case 'INSERT':
+    //       dispatch(fetchTodoRealTime(msg.element));
+    //       break;
+    //     case 'UPDATE':
+    //       dispatch(updateTodoRealTime(msg.element));
+    //       break;
+    //     case 'DELETE':
+    //       dispatch(deleteTodoRealTime(msg.element));
+    //       break;
+    //   }
+    // });
     return () => {
-      subscription.unsubscribe();
+      //subscription.unsubscribe();
     };
   }, [dispatch]);
 
