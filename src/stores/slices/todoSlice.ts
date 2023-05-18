@@ -86,5 +86,5 @@ export const {
   fetchTodoList,
 } = todoSlice.actions;
 
-//export const selectTodoList = (state: RootState) => state.todo.todoList;
+export const selectTodoList = (state: RootState) => state.todo.todoList;
 export default todoSlice.reducer;

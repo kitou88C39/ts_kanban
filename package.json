@@ -3,6 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@aws-amplify/cli": "^11.1.1",
+    "@aws-amplify/notifications": "^1.1.6",
+    "@aws-amplify/ui-react": "^4.6.1",
+    "@aws-sdk/util-middleware": "^3.329.0",
     "@babel/core": "^7.21.8",
     "@babel/plugin-syntax-flow": "^7.14.5",
     "@babel/plugin-transform-react-jsx": "^7.14.9",
@@ -19,6 +23,7 @@
     "@types/react": "^18.2.0",
     "@types/react-dom": "^18.2.1",
     "@types/uuid": "^9.0.1",
+    "aws-amplify": "4.3.24",
     "babel-plugin-transform-react-jsx": "^6.24.1",
     "framer-motion": "^10.12.4",
     "moment": "^2.29.4",
