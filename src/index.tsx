@@ -7,10 +7,10 @@ import reportWebVitals from './reportWebVitals';
 import './index.css';
 import { ChakraProvider } from '@chakra-ui/react';
 import { BrowserRouter } from 'react-router-dom';
-//import { Amplify } from 'aws-amplify';
-//import awsExports from './aws-exports';
-//import { Authenticator } from '@aws-amplify/ui-react';
-//Amplify.configure(awsExports);
+import { Amplify } from 'aws-amplify';
+import awsExports from './aws-exports';
+import { Authenticator } from '@aws-amplify/ui-react';
+Amplify.configure(awsExports);
 
 const container = document.getElementById('root')!;
 const root = createRoot(container);
@@ -18,13 +18,13 @@ const root = createRoot(container);
 root.render(
   <React.StrictMode>
     <BrowserRouter>
-      {/* <Authenticator.Provider> */}
-      <Provider store={store}>
-        <ChakraProvider>
-          <App />
-        </ChakraProvider>
-      </Provider>
-      {/* </Authenticator.Provider> */}
+      <Authenticator.Provider>
+        <Provider store={store}>
+          <ChakraProvider>
+            <App />
+          </ChakraProvider>
+        </Provider>
+      </Authenticator.Provider>
     </BrowserRouter>
   </React.StrictMode>
 );

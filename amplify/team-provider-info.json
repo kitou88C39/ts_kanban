@@ -1,0 +1,41 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-tskanban-dev-101330-authRole",
+      "UnauthRoleArn": "arn:aws:iam::696049820075:role/amplify-tskanban-dev-101330-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::696049820075:role/amplify-tskanban-dev-101330-authRole",
+      "Region": "ap-northeast-1",
+      "DeploymentBucketName": "amplify-tskanban-dev-101330-deployment",
+      "UnauthRoleName": "amplify-tskanban-dev-101330-unauthRole",
+      "StackName": "amplify-tskanban-dev-101330",
+      "StackId": "arn:aws:cloudformation:ap-northeast-1:696049820075:stack/amplify-tskanban-dev-101330/b6a89770-ee06-11ed-97b5-0a494010225d",
+      "AmplifyAppId": "d2ryugd2ey29ki"
+    },
+    "categories": {
+      "auth": {
+        "tskanban916b8f2d": {}
+      }
+    }
+  },
+  "develop": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-tskanban-develop-203851-authRole",
+      "UnauthRoleArn": "arn:aws:iam::696049820075:role/amplify-tskanban-develop-203851-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::696049820075:role/amplify-tskanban-develop-203851-authRole",
+      "Region": "ap-northeast-1",
+      "DeploymentBucketName": "amplify-tskanban-develop-203851-deployment",
+      "UnauthRoleName": "amplify-tskanban-develop-203851-unauthRole",
+      "StackName": "amplify-tskanban-develop-203851",
+      "StackId": "arn:aws:cloudformation:ap-northeast-1:696049820075:stack/amplify-tskanban-develop-203851/1274e2a0-ee5e-11ed-b69f-0edc6c3bd8dd",
+      "AmplifyAppId": "d2ryugd2ey29ki"
+    },
+    "categories": {
+      "auth": {
+        "tskanban916b8f2d": {}
+      },
+      "api": {
+        "tskanbanGql": {}
+      }
+    }
+  }
+}
