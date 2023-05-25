@@ -1,3 +1,5 @@
+//その①
+import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import {
   Box,
@@ -14,14 +16,28 @@ type FormValues = {
 };
 
 const AddTodo: React.FC = () => {
+  //その②
+  //const [isSubmitting, setIsSubmitting] = useState(false);
+  //その③
+  const isSubmitting = useState<boolean>(false);
   const {
     handleSubmit,
     register,
     formState: { errors, isSubmitting },
     reset,
   } = useForm<FormValues>();
+  // const onSubmit = async (data: { title: string; content: string }) => {
+  //   await createTodoApi(data);
+  //   reset();
+  // };
+
   const onSubmit = async (data: { title: string; content: string }) => {
-    await createTodoApi(data);
+    await createTodoApi(data).catch((e) => {
+      console.error(e);
+      //isSubmitting = false;
+      //その④
+      setIsSubmitting(false);
+    });
     reset();
   };
 
