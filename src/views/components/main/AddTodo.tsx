@@ -1,4 +1,3 @@
-//その①
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import {
@@ -15,27 +14,21 @@ type FormValues = {
   content: string;
 };
 
+const isInvalid: boolean = false;
+
 const AddTodo: React.FC = () => {
-  //その②
-  //const [isSubmitting, setIsSubmitting] = useState(false);
-  //その③
-  const isSubmitting = useState<boolean>(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
   const {
     handleSubmit,
     register,
-    formState: { errors, isSubmitting },
+    //formState: { errors, isSubmitting },
     reset,
   } = useForm<FormValues>();
-  // const onSubmit = async (data: { title: string; content: string }) => {
-  //   await createTodoApi(data);
-  //   reset();
-  // };
 
   const onSubmit = async (data: { title: string; content: string }) => {
     await createTodoApi(data).catch((e) => {
       console.error(e);
-      //isSubmitting = false;
-      //その④
       setIsSubmitting(false);
     });
     reset();
@@ -46,6 +39,8 @@ const AddTodo: React.FC = () => {
       <form onSubmit={handleSubmit(onSubmit)}>
         <FormControl
           isInvalid={!!errors.title}
+          //その①
+          //isInvalid={isInvalid}
           w={{ base: '90vw', sm: '80vw', md: '70vw', lg: '60vw' }}
         >
           <Textarea
@@ -57,11 +52,15 @@ const AddTodo: React.FC = () => {
           />
 
           <FormErrorMessage>
+            {/* その② */}
+            {/* Please enter title. */}
             {errors.title && errors.title.message}
           </FormErrorMessage>
         </FormControl>
         <FormControl
           isInvalid={!!errors.content}
+          //その①
+          //isInvalid={isInvalid}
           w={{ base: '90vw', sm: '80vw', md: '70vw', lg: '60vw' }}
         >
           <Textarea
@@ -72,6 +71,8 @@ const AddTodo: React.FC = () => {
             {...register('content', { required: 'Please enter content.' })}
           />
           <FormErrorMessage>
+            {/* その② */}
+            {/* Please enter content. */}
             {errors.content && errors.content.message}
           </FormErrorMessage>
         </FormControl>
