@@ -11,11 +11,9 @@ const Login: React.FC<Props> = (props) => {
   return (
     <div className='w-full text-align: center'>
       <Authenticator>
-        {({ signOut, user }) => (
-          <main>
-            {user ? <Main /> : <button onClick={signOut}>LogOut</button>}
-          </main>
-        )}
+        <main>
+          {user ? <Main /> : <button onClick={signOut}>LogOut</button>}
+        </main>
       </Authenticator>
     </div>
   );

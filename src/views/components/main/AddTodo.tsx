@@ -22,14 +22,15 @@ const AddTodo: React.FC = () => {
   const {
     handleSubmit,
     register,
-    //formState: { errors, isSubmitting },
+    formState: { errors },
     reset,
   } = useForm<FormValues>();
 
   const onSubmit = async (data: { title: string; content: string }) => {
+    //console.log('submit');
     await createTodoApi(data).catch((e) => {
       console.error(e);
-      setIsSubmitting(false);
+      //setIsSubmitting(false);
     });
     reset();
   };

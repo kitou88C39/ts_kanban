@@ -12,9 +12,10 @@ const Main: React.FC = () => {
   const [isLogin, setIsLogin] = useState(false);
   Auth.currentUserInfo()
     .then((user: any) => {
-      if (user == null) setIsLogin(true);
+      console.log(user);
+      if (user == null) setIsLogin(false);
       else if (user != null) {
-        setIsLogin(false);
+        setIsLogin(true);
         console.log(user);
       }
     })
