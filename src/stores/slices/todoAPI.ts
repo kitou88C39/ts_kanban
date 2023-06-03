@@ -9,7 +9,9 @@ export const createTodoApi = async (data: {
   const { title, content } = data;
   try {
     await DataStore.save(new Todo({ title, content, isDone: false }));
+    console.log('create success');
   } catch (error) {
+    console.log(error);
     throw error;
   }
 };
