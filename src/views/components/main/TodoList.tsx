@@ -27,16 +27,17 @@ const TodoList: React.FC = () => {
 
   useEffect(() => {
     //todoテーブルの変更をリアルタイムに検知する
-    const subscription = DataStore.observe(Todo).subscribe((msg) => {
-      switch (msg.opType) {
+    const subscription = DataStore.observe(Todo).subscribe((todo) => {
+      const todoModel = JSON.parse(JSON.stringify(todo.element));
+      switch (todo.opType) {
         case 'INSERT':
-          dispatch(fetchTodoRealTime(msg.element));
+          dispatch(fetchTodoRealTime(todoModel));
           break;
         case 'UPDATE':
-          dispatch(updateTodoRealTime(msg.element));
+          dispatch(updateTodoRealTime(todoModel));
           break;
         case 'DELETE':
-          dispatch(deleteTodoRealTime(msg.element));
+          dispatch(deleteTodoRealTime(todoModel));
           break;
       }
     });

@@ -44,6 +44,7 @@ export const todoSlice = createSlice({
     fetchReadList: (state, action: PayloadAction<[]>) => {
       state.todoList = action.payload;
     },
+
     //fetchTodoRealTime: (state, action: PayloadAction<[]>) => {
     //state.todoList = action.payload;
     // },
@@ -55,19 +56,20 @@ export const todoSlice = createSlice({
       }
     },
     updateTodoRealTime: (state, action) => {
-      const id = action.payload;
+      console.log(action);
+      const id = action.payload.id;
       state.todoList = state.todoList.filter((todo) => todo.id !== id);
     },
     deleteTodoRealTime: (state, action) => {
-      const id = action.payload;
+      const id = action.payload.id;
       state.todoList = state.todoList.filter((todo) => todo.id !== id);
     },
     fetchTodoRealTime: (state, action) => {
-      const id = action.payload;
+      const id = action.payload.id;
       state.todoList = state.todoList.filter((todo) => todo.id !== id);
     },
     fetchTodoListAsync: (state, action) => {
-      const id = action.payload;
+      const id = action.payload.id;
       state.todoList = state.todoList.filter((todo) => todo.id !== id);
     },
   },
