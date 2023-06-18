@@ -27,6 +27,8 @@ const AddTodo: React.FC = () => {
   } = useForm<FormValues>();
 
   const onSubmit = async (data: { title: string; content: string }) => {
+    console.log('title');
+    console.log('content');
     //console.log('submit');
     await createTodoApi(data).catch((e) => {
       console.error(e);
@@ -39,8 +41,6 @@ const AddTodo: React.FC = () => {
       <form onSubmit={handleSubmit(onSubmit)}>
         <FormControl
           isInvalid={!!errors.title}
-          //その①
-          //isInvalid={isInvalid}
           w={{ base: '90vw', sm: '80vw', md: '70vw', lg: '60vw' }}
         >
           <Textarea
