@@ -30,7 +30,6 @@ const AddTodo: React.FC = () => {
     //console.log('submit');
     await createTodoApi(data).catch((e) => {
       console.error(e);
-      //setIsSubmitting(false);
     });
     reset();
   };
@@ -51,17 +50,12 @@ const AddTodo: React.FC = () => {
             _placeholder={{ color: 'inherit' }}
             {...register('title', { required: 'Please enter title.' })}
           />
-
           <FormErrorMessage>
-            {/* その② */}
-            {/* Please enter title. */}
             {errors.title && errors.title.message}
           </FormErrorMessage>
         </FormControl>
         <FormControl
           isInvalid={!!errors.content}
-          //その①
-          //isInvalid={isInvalid}
           w={{ base: '90vw', sm: '80vw', md: '70vw', lg: '60vw' }}
         >
           <Textarea
@@ -72,8 +66,6 @@ const AddTodo: React.FC = () => {
             {...register('content', { required: 'Please enter content.' })}
           />
           <FormErrorMessage>
-            {/* その② */}
-            {/* Please enter content. */}
             {errors.content && errors.content.message}
           </FormErrorMessage>
         </FormControl>
