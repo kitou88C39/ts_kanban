@@ -27,10 +27,9 @@ const AddTodo: React.FC = () => {
   } = useForm<FormValues>();
 
   const onSubmit = async (data: { title: string; content: string }) => {
-    console.log('title');
-    console.log('content');
-    //console.log('submit');
-    await createTodoApi(data).catch((e) => {
+    console.log(data);
+
+    await createTodoApi(data).catch((e: any) => {
       console.error(e);
     });
     reset();

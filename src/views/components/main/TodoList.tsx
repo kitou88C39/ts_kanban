@@ -4,7 +4,7 @@ import TodoItem from './TodoItem';
 import { useAppDispatch, useAppSelector } from '../../../stores/hooks';
 
 import {
-  fetchTodoListAsync,
+  fetchTodoList,
   fetchTodoRealTime,
   selectTodoList,
   updateTodoRealTime,
@@ -19,10 +19,15 @@ const TodoList: React.FC = () => {
 
   useEffect(() => {
     //todo一覧の取得
-    const fetchTodoList = async () => {
-      await dispatch(fetchTodoListAsync([]));
+    const fetchTodoListAsync = async () => {
+      const todo = await DataStore.query(Todo);
+      console.log(todo);
+      const fetchTodo = todo.map((v) => {
+        return JSON.parse(JSON.stringify(v));
+      });
+      dispatch(fetchTodoList(fetchTodo));
     };
-    fetchTodoList();
+    fetchTodoListAsync();
   }, [dispatch]);
 
   useEffect(() => {
