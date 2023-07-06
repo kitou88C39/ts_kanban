@@ -38,7 +38,7 @@ export const todoSlice = createSlice({
         return todo.id !== action.payload;
       });
     },
-    fetchTodoList: (state, action: PayloadAction<[]>) => {
+    fetchTodoList: (state, action: PayloadAction<any[]>) => {
       state.todoList = action.payload;
     },
     fetchReadList: (state, action: PayloadAction<[]>) => {
@@ -88,5 +88,8 @@ export const {
   fetchTodoList,
 } = todoSlice.actions;
 
-export const selectTodoList = (state: RootState) => state.todo.todoList;
+export const selectTodoList = (state: RootState) => {
+  console.log(state);
+  return state.todo.todoList;
+};
 export default todoSlice.reducer;
